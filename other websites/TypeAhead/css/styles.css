@@ -1,0 +1,71 @@
+body{
+  --first-color: hsl(215, 50%, 20%);
+  --first-color-bright: hsl(215, 30%, 30%);
+  min-height: 100vh;
+  padding-top: 20vh;
+
+  display:flex;
+  justify-content: center;
+
+  background-color: rgb(254,254,255);
+
+  font-family:"Roboto";
+  color: var(--first-color);
+}
+
+main{
+  display:flex;
+  flex-direction:column;
+  gap: 1.4rem;
+}
+
+h1{
+  font-size: 4rem;
+  font-weight: 500;
+}
+
+form{
+  display:flex;
+  flex-direction:column;
+
+
+  font-weight: 400;
+  font-size: 1.4rem;
+}
+
+label{
+  color: var(--first-color-bright);
+  margin-bottom: 0.7em;
+}
+
+input[type="text"]{
+  padding-block: 0.4em;
+  padding-inline: 0.5em;
+  border-color: var(--first-color-bright);
+}
+
+input[type="text"]:focus{
+  outline: 1px solid var(--first-color-bright);
+}
+
+ul{
+  border: 1px solid var(--first-color-bright);
+  border-top: none;
+}
+
+li{
+  padding-block: 0.2em;
+  padding-inline: 0.6em;
+}
+
+li:first-child{
+  padding-top: 0.4em;
+}
+
+li:last-child{
+  padding-bottom: 0.4em;
+}
+li:hover,
+li:focus{
+  background-color:hsl(215, 30%, 90%);
+}

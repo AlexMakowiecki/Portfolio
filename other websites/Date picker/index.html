@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link
+  href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,600,700"
+  rel="stylesheet"/>
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Datepicker</h1>
+    <form>
+      <label for="calendar-input">Select the field to see the datepicker in action.</label>
+      <input id="calendar-input" type="text" placeholder="DD/MM/YYYY"/>
+    </form>
+    <div class="calendar">
+      <div class="calendar__navigation">
+        <button class="previous">&lt;</button>
+        <div class="calendar__month-and-year">
+          <time datetime="2023-5">May 2023</time>
+        </div>
+        <button class="next">&gt;</button>
+      </div>
+      <div class="calendar__weeks">
+        <div>Su</div>
+        <div>Mo</div>
+        <div>Tu</div>
+        <div>We</div>
+        <div>Th</div>
+        <div>Fr</div>
+        <div>Sa</div>
+      </div>
+      <div class="calendar__days">      
+      </div>
+    </div>
+  </main>
+</body>
+</html>

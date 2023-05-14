@@ -1,0 +1,146 @@
+:root{
+  --primary-font: "Roboto";
+  --font-base-weight: 400;
+  --background-color: hsl(220, 35%, 85%);
+  --primary-color: hsl(220, 40%, 30%);
+  --secondary-color: hsl(220, 30%, 70%);
+  --third-color: hsl(220, 30%, 40%);
+}
+
+body{
+  min-height: 100vh;
+  padding-block: 5vh;
+
+  display:flex;
+  justify-content: center;
+  background-color: var(--background-color);
+
+  font-family: var(--primary-font);
+  font-size: 1.5rem;
+  color: var(--primary-color);
+
+}
+
+main{
+  display:flex;
+  flex-direction:column;
+  gap: 5px;
+}
+
+h1{
+  font-weight:600;
+}
+
+
+form{
+  display:flex;
+  flex-direction:column;
+  gap: 30px;
+}
+
+label{
+  font-weight: 500;
+}
+
+button{
+  border:none;
+}
+input[type="text"]{
+  display:block;
+  width: 50%;
+  padding: 1rem;
+  margin-bottom: 15px;
+
+  border-radius: 7px;
+  border:none;
+
+  font-size: 1.3rem;
+  color:var(--third-color);
+}
+
+input[type="text"]::placeholder{
+  color:var(--secondary-color);
+}
+
+input[type="text"],
+.calendar{
+  box-shadow: 4px 4px 5px -5px hsl(220, 40%, 30%);
+}
+
+input[type="text"]:focus{
+  outline:none;
+}
+
+.calendar{
+  padding: 1.5em 2em;
+
+  display:flex;
+  flex-direction:column;
+  gap: 1em;
+
+  background-color: white;
+  border-radius: 7px;
+
+}
+
+.calendar__navigation{
+  display:flex;
+}
+
+.calendar__month-and-year{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-grow: 2;
+
+  font-weight: 500;
+}
+
+.calendar__navigation button{
+  padding:unset;
+  font-size: 1.5em;
+  font-weight: 500;
+  flex-shrink: 0;
+  width: 1em;
+  transition: transform 0.1s ease-in-out    ;
+}
+
+.calendar__navigation button:focus,
+.calendar__navigation button:hover{
+  transform:scale(1.2);
+}
+
+.calendar__month-and-year,
+.calendar__week{
+  pointer-events:none;
+}
+
+.calendar__weeks,
+.calendar__days{
+  display:grid;
+  grid-template-columns: repeat(7, 1fr);
+  justify-items:center;
+}
+
+.calendar__weeks{
+  color: var(--secondary-color);
+  font-weight: 700;
+  font-size: 0.8em;
+}
+
+.calendar__days{
+  color: var(--third-color);
+  column-gap: 0.3em;
+}
+
+.calendar__days button{
+  width: 2.5em;
+  height: 2.5em;
+  padding:unset;
+  border-radius: 50%;
+}
+
+.calendar__days button:hover,
+.calendar__days button:focus{
+  background-color: hsl(220, 30%, 90%);
+}

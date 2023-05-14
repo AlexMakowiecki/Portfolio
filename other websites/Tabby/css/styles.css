@@ -1,0 +1,129 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin-inline: auto;
+  font-family: "Noto Sans"
+}
+
+main {
+  width: inherit;
+  height: inherit;
+  padding-top: 9%;
+}
+
+
+.Tabby {
+  --border-width: 10px;
+  --border-style: solid;
+
+  width: min(90%,900px);
+  margin-inline: auto;
+
+  display: grid;
+  grid-template-rows: 1fr 6fr;
+
+}
+
+
+.Tabby > .navigation {
+
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+
+}
+
+.navigation > .tab {
+
+  display:flex;
+  align-items: center;
+  justify-content: center;
+
+  position:relative;
+
+  background-color: white;
+
+  font-size: 1.2rem;
+  line-height: 1em;
+
+  filter: grayscale(75%) brightness(0.8);
+}
+
+.navigation > .tab[data-target = "digimon"] {
+  border-inline: var(--border-width) solid darkblue;
+  border-top: var(--border-width) solid darkblue;
+}
+
+.navigation > .tab[data-target = "pokemon"] {
+  border-inline: var(--border-width) solid yellow;
+  border-top: var(--border-width) solid yellow;
+}
+
+.navigation > .tab[data-target = "tamagotchi"] {
+  border-inline: var(--border-width) solid red;
+  border-top: var(--border-width) solid red;
+}
+
+.navigation > .tab.eIsSelected {
+  filter:none;
+}
+.navigation > .tab.eIsSelected::after {
+  content: "";
+  display:block;
+
+  position:absolute;
+  top: 98%;
+  right: 0;
+
+
+  background-color:white;
+  height: calc(var(--border-width) + 3px); 
+  width: 100%;
+}
+
+
+.content > .tabContent {
+  display:none;
+  padding: 3rem 3rem 2rem 3rem;
+
+  font-size: 1.6rem;
+}
+
+.tabContent > img {
+  width: 50%;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
+  float:right;
+
+}
+
+.tabContent > h2{
+  font-size: 3rem;
+  margin-bottom: 0.5em;
+}
+
+.tabContent > p{
+  margin-bottom: 1em;
+  font-size: 20px;
+  line-height: 1.35em;
+}
+
+.content > .tabContent.eIsSelected {
+  display:block;
+  
+}
+
+#digimon{
+  border: var(--border-width) solid darkblue;
+}
+
+#pokemon {
+  border: var(--border-width) solid yellow;
+}
+
+#tamagotchi{
+  border: var(--border-width) solid red;
+}

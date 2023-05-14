@@ -1,0 +1,249 @@
+/* Josh Comeau CSS Reset */
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+body {
+  min-height: 100vh;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+/* My CSS reset */
+
+* {
+  padding: 0;
+}
+
+
+/* My personal configuration */
+
+body {
+  /* Box */
+    padding: 4.4rem 2rem 4.8rem 2rem;
+  /* Box Style */
+    background-color: hsl(0, 0%, 98%);
+  /* Text */
+    font-family: "Poppins";
+    font-size: 0.9375rem;
+    color: hsl(229, 6%, 66%);
+}
+
+
+.title {
+  margin-bottom: 4.6rem;
+  padding-inline: min(18rem, calc(60.579% - 20.4375rem));
+}
+
+.title > *{
+  /* Text */
+    text-align:center;
+}
+
+.title > h1 {
+  /* Text */
+    margin-top:0.9rem;
+    font-size: max(2.556vw, 1.5rem); /* 2.3rem */   /* 1.5rem */
+    font-weight: 600;
+    color: hsl(234, 12%, 34%)
+}
+
+.title > h1 > .upper-sector {
+  /* Text */
+    font-weight: 200;
+}
+
+.title > p {
+  box-sizing: content-box;
+  line-height: 1.6rem;
+  margin-top: 0.8rem;
+  
+}
+
+.content {
+  --row-height: 13.9rem;
+  --box-gap: 1.55rem;
+  max-width: 450px;
+  margin-inline:auto;
+  display:grid;
+  grid-template-rows: var(--row-height) calc(calc(var(--row-height) * 2) + var(--box-gap)) var(--row-height);
+  gap: var(--box-gap);
+}
+
+/* .content > .cell {
+  display:grid;
+} */
+
+.content > .cell-double {
+  /* Box */
+    display:grid;
+    grid-template-rows: var(--row-height);
+    gap: var(--box-gap);
+}
+
+.content .box {
+  /* Box */
+    --border-height: 4px;
+    padding: 1.3rem;
+  /* Box Style */
+    background-color:hsl(0, 0%, 98%);
+    border-radius: 0.31rem;
+    box-shadow: 0px 8px 30px -20px hsl(212, 86%, 64%), 0px 23px 60px -55px hsl(229, 6%, 66%);
+}
+
+.content > .cell > .box{
+   height:var(--row-height);
+}
+
+.content .box#supervisor {
+  /* Box Style */
+    border-top: var(--border-height) solid hsl(180, 62%, 55%);
+}
+
+.content .box#team-builder {
+  /* Box Style */
+    border-top: var(--border-height) solid hsl(0, 78%, 62%);
+}
+
+.content .box#karma {
+  /* Box Style */
+    border-top: var(--border-height) solid hsl(34, 97%, 64%);
+}
+
+.content .box#calculator {
+  /* Box Style */
+    border-top: var(--border-height) solid hsl(212, 86%, 64%);
+}
+
+.content .box *{
+  /* Box */
+    margin-block: 0.3rem;
+}
+
+.content .box > h2 {
+  /* Text */
+    font-size: 1.2rem;
+    color: hsl(234, 12%, 34%);  
+}
+
+.content .box > p {
+  /* Text */
+    font-size: 0.8rem;
+    font-weight: 400;
+    line-height: 1.4rem;
+    color:hsl(229, 6%, 74%);
+}
+
+
+
+.content .box > img {
+  float:right;
+  width: 3.6rem;
+  margin-top: 1.6rem;
+}
+
+@media screen and (min-width: 1100px) {
+
+
+  body {
+    padding: 4% 12%;
+  }
+
+  main {
+    height: 100%;
+  }
+
+  .title > p{
+    padding-inline: calc(50.579% - 23.4375rem); /* 18rem at 1440p 0rem at 375p*/
+  }
+
+  .title > h1 {
+    font-size: min(2.556vw, 2.3rem); /* 2.3rem */  
+    line-height: min(3.55vw, 3.25rem); /* 3.25rem*/
+  }
+
+  .content {
+    --box-gap: 1.8rem;
+    --row-height: 15rem;
+    display:grid;
+    max-width: unset;
+    margin-inline: unset;
+    column-gap: var(--box-gap);
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: calc(var(--row-height) * 2);
+  }
+
+  .cell {
+    display:grid;
+    align-content: center;
+  }
+
+  .content > .cell-double{
+    display:grid;
+    row-gap: var(--box-gap);
+    align-content: center;
+    grid-template-rows: var(--row-height) var(--row-height);
+    grid-template-columns: 1fr;
+  }
+
+
+}
+
+/* General configuration */
+
+.attribution {
+  position:fixed;
+  bottom: 0px;
+  right: 25%;
+  left: 25%;
+  font-size: 11px; 
+  text-align: center; }
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+

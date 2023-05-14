@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>to-do list</title>
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,700"
+      rel="stylesheet"
+    />
+
+    <link href="css/normalize.css" rel="stylesheet" />
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="js/main.js" defer></script>
+  </head>
+  <body>
+    <div class="todo-list">
+      <div class="todo-list__input">
+        <form class="task-form" target="" method="">
+          <div class="text-input-group">
+            <label for="task-input">Add a task</label>
+            <input
+              type="text"
+              id="task-input"
+              name="task-input"
+              placeholder="E.g. Buy groceries"
+              autocomplete="off"
+            />
+          </div>
+          <button type="submit">
+            <div class="cross">
+              <div class="vertical-line cross__line"></div>
+              <div class="horizontal-line cross__line"></div>
+            </div>
+            <span>Add task</span>
+          </button>
+        </form>
+      </div>
+      <div class="todo-list__tasks">
+        <ul>
+          <li class="task">
+            <input type="checkbox" name="task3" id="task3" class="hidden-checkbox"/>
+            <label class="new-checkbox" for="task3"></label>
+            <span>Drink water</span>
+            <button class="delete-task-button">
+              <div class="diagonal-cross">
+                <div class="diagonal-cross__line upper-left-diagonal"></div>
+                <div class="diagonal-cross__line upper-right-diagonal"></div>
+              </div>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
