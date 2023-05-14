@@ -13,6 +13,7 @@ body{
   font-family: "Roboto";
   background-color: var(--back-color-500);
   color: #DCDCDC;
+  /* !TODO: REPLACE THIS*/
   zoom: 130%;
 }
 
@@ -34,9 +35,23 @@ main {
   flex-direction:column;
   align-items:center;
   gap: 5rem;
-
-
 }
+
+section {
+  width: 100%;
+}
+
+h2{
+  font-size: 1rem;
+  font-weight: 400;
+  text-align:left;
+  margin-bottom:2rem;
+}
+
+h3{
+  font-size: 0.8rem;
+}
+
 
 .presentation{
   width: 100%;
@@ -87,20 +102,11 @@ main {
   font-family: "Outfit";
 }
 
-section {
-  width: 100%;
-}
+/* OBJECTIVES SECTION */
 
 .objectives{
   padding-inline: 10vw;
   justify-content:space-between;
-}
-
-h2{
-  font-size: 1rem;
-  font-weight: 400;
-  text-align:left;
-  margin-bottom:2rem;
 }
 
 .objectives__list{
@@ -142,6 +148,8 @@ h2{
   font-family:"Roboto";
 }
 
+/* PROJECTS SECTION */
+
 .projects__title{
   padding-inline: 10vw;
 }
@@ -167,6 +175,16 @@ h2{
   position:absolute;
 
   border:none;
+  transition: transform 0.1s ease-in-out;
+}
+
+.carousel__button:hover{
+  transform:scale(1.25)
+}
+
+.hidden{
+  opacity: 0;
+  z-index: -1;
 }
 
 .carousel__button.right-button{
@@ -184,16 +202,21 @@ h2{
   padding-inline:1rem;
 }
 
-
-.projects__carousel img{
+.image-box img{
   object-fit:cover;
   width: 100%;
 }
+
+/* EDUCATION SECTION */
 
 .education{
   display:flex;
   flex-direction:column;
   gap: 0rem;
+}
+
+.education__title{
+  padding-left: 10vw;
 }
 
 .education__content{
@@ -202,16 +225,19 @@ h2{
   gap:4rem;
 }
 
-.education__title{
-  padding-left: 10vw;
-}
-
 .education__university{
   padding-left: 10vw;
   display:grid;
   grid-template-rows: repeat(6, 1fr);
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1rem;
+  position:relative;
+}
+
+
+.education__university .box .name p:last-child,
+.education__university__title p:last-child{
+  font-size: 0.6rem;
 }
 
 .education__university .arrows-section{
@@ -232,9 +258,14 @@ h2{
   left: 8.7px;
 }
 
+.education__university .arrows-section{
+  grid-row: 2/-1;
+  grid-column: 1/1;
+}
 
-h3{
-  font-size: 0.8rem;
+.arrows-sections svg{
+  width: auto;
+  height: auto;
 }
 
 @keyframes draw{
@@ -259,23 +290,28 @@ h3{
   animation: draw 4s linear forwards;
 }
 
-
-
-.education__university p{
-  font-size: 0.6rem;
-}
-
-.education__university .arrows-section{
-  grid-row: 2/-1;
-  grid-column: 1/1;
-}
-
 .education__university .information-section{
   grid-row: 2/-1;
   grid-column:2/-1;
   display:grid;
   align-items:center;
   font-size: 0.75rem;
+}
+
+.information-section .name{
+  display:inline-block;
+}
+
+.information-section .name p{
+  pointer-events: none;
+}
+
+.information-section .example-box{
+  position:absolute;
+  width: 200px;
+  border: 1px solid gray;
+  background-color:black;
+  color:white;
 }
 
 .education__courses{
@@ -297,6 +333,21 @@ h3{
 
 .courses-list li{
   padding: 0.5rem;
+}
+
+.courses-list li:nth-child(n-2){
+  background-color: #ffffff;
+}
+.courses-list li:nth-child(3){
+  background-color: #fafafa;
+}
+
+.courses-list li:nth-child(4){
+  background-color: #0a0a24;
+}
+
+.courses-list li img{
+  object-fit:scale-down
 }
 
 
