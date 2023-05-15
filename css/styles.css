@@ -421,8 +421,13 @@ h3{
   }
 }
 
-.appeared:not(.arrows-section, .information-section){
+.appeared:not(.arrows-section, .information-section, .image-box, .courses-list li){
   animation: move 0.9s ease forwards, appear 1.3s ease-out forwards;
+}
+
+.image-box.appeared,
+.courses-list li.appeared{
+  animation: appear 2s ease-in-out forwards;
 }
 
 .information-section.appeared{
