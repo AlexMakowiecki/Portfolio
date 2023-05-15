@@ -24,20 +24,22 @@
     </header>
     <main>
       <section class="presentation">
-        <div class="presentation__front">
-          <img
-            class="presentation__photo"
-            src="img/new-photo.avif"
-            width="200px"
-            height="200px"
-            alt="face of Alex Makowiecki, a very talented programmer"
-          />
-          <p class="presentation__name" data-delay="0.10s">Alex Abel Makowiecki</p>
-        </div>
-        <div class="presentation__biography" hidden>
-          <p>
-            Hola! me llamo Alex, pero normalmente me llaman Mako. Tengo 22 años y actualmente me encuentro haciendo cursos de programacion web online, intentando profundizar mis conocimientos en javascript, pero tambien estoy abierto a cualquier otra habilidad practica que me ayude en mi experiencia programando
-        </div>
+        <div class="presentation__container">
+          <div class="presentation__front">
+            <img
+              class="presentation__photo"
+              src="img/new-photo.avif"
+              width="200px"
+              height="200px"
+              alt="face of Alex Makowiecki, a very talented programmer"
+            />
+            <p class="presentation__name" data-delay="0.10s">Alex Abel Makowiecki</p>
+          </div>
+          <div class="presentation__biography">
+            <p>
+              Hola! me llamo Alex, pero normalmente me llaman Mako. Tengo 22 años y actualmente me encuentro haciendo cursos de programacion web online, intentando profundizar mis conocimientos en javascript, pero tambien estoy abierto a cualquier otra habilidad practica que me ayude en mi experiencia programando
+          </div>
+        </div>     
       </section>
       <section class="objectives">
         <h2 class="objectives__title" data-delay="0.25s">Objetivos</h2>
@@ -70,7 +72,9 @@
         </ul>
       </section>
       <section class="projects">
-        <h2 class="projects__title">Proyectos</h2>
+        <div class="projects__title">
+          <h2>Proyectos</h2>
+        </div>
         <div class="carousel-container box-design">
           <div class="projects__carousel" data-length-position="0" data-max-elements="4">
             <div class="image-box" data-delay="0s">
@@ -185,7 +189,9 @@
         </div>
       </section>
       <section class="education">
-        <h2 class="education__title">Educacion recibida</h2>
+        <div class="education__title">
+          <h2>Educacion recibida</h2>
+        </div>
         <div class="education__content">
           <div class="education__university">
             <div class="education__university__title">

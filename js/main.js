@@ -1,5 +1,6 @@
 const presentation = document.querySelector(".presentation")
 const presentationBiography  = presentation.querySelector(".presentation__biography")
+const presentationFront = presentation.querySelector(".presentation__front")
 const projectsCarousel = document.getElementsByClassName("projects__carousel")[0];
 const carouselLeftButton = document.querySelector(".left-button")
 const carouselRightButton = document.querySelector(".right-button")
@@ -41,14 +42,20 @@ function setAppearAnimation(){
 setAppearAnimation();
 
 
-presentation.addEventListener("mouseover", () =>{
-  presentationBiography.hidden = false;
-  presentationBiography.classList.add("presentation__biography--visible");
+presentation.addEventListener("mouseover", (e) =>{
+  if (e.target.closest(".presentation__container")){
+    presentationBiography.classList.add("presentation__biography--visible");
+    presentationBiography.style.transform = `translate(${presentationBiography.getBoundingClientRect().width/2}px)`
+    presentationFront.style.transform = `translate(-${presentationBiography.getBoundingClientRect().width/2}px)`
+  }
 })
 
-presentation.addEventListener("mouseout", () =>{
-  presentationBiography.hidden = true;
-  presentationBiography.classList.remove("presentation__biography--visible");
+presentation.addEventListener("mouseout", (e) =>{
+  if (e.target.closest(".presentation__container")){
+    presentationBiography.style.transform = `translate(0px)`
+    presentationFront.style.transform = `translate(0px)`
+    presentationBiography.classList.remove("presentation__biography--visible");
+  }
 })
 
 
