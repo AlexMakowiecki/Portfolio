@@ -47,6 +47,7 @@ h2{
   font-weight: 400;
   text-align:left;
   margin-bottom:2rem;
+  opacity:0
 }
 
 h3{
@@ -79,7 +80,7 @@ h3{
 
   border-radius: 50%;
   object-fit:cover;
-
+  opacity: 0
 }
 
 .presentation__name{
@@ -89,17 +90,8 @@ h3{
   text-align:center;
   font-size: 1.1rem;
   font-weight: 400;
-  font-family: "outfit"
-}
-
-@keyframes appear{
-  0%{
-    transform: translateX(-25px);
-  }
-  100%{
-    transform: translateX(0px);
-    opacity:1;
-  }
+  font-family: "outfit";
+  opacity: 0;
 }
 
 .presentation__biography{
@@ -115,6 +107,8 @@ h3{
 .presentation__biography--visible{
   animation: appear 1s ease-in-out;
 }
+
+
 
 /* OBJECTIVES SECTION */
 
@@ -140,6 +134,7 @@ h3{
   display:flex;
   gap: 1.5rem;
   align-items:center;
+  opacity:0
 }
 
 .objective .dot{
@@ -210,6 +205,7 @@ h3{
 .projects__carousel .image-box{
   min-width: 25%;
   padding-inline:1rem;
+  opacity:0;
 }
 
 .image-box img{
@@ -243,6 +239,10 @@ h3{
   gap: 1rem;
 }
 
+.education__university__title h3,
+.education__university__title p{
+  opacity:0;
+}
 
 .education__university .box .name p:last-child,
 .education__university__title p:last-child{
@@ -277,26 +277,13 @@ h3{
   height: auto;
 }
 
-@keyframes draw{
-  0%{
-    opacity:0%;
-  }
-  40%{
-    opacity:100%;
-  }
-  100%{
-    stroke-dashoffset: 0;
-  }
-}
-
 #multiple-arrows{
   stroke: #DCDCDC;
   stroke-width: 0.3;
   fill: none;
   stroke-dasharray: 382.42645263671875;
   stroke-dashoffset: 382.42645263671875;
-  opacity:100%;
-  animation: draw 4s linear forwards;
+  opacity:0;
 }
 
 .education__university .information-section{
@@ -305,6 +292,7 @@ h3{
   display:grid;
   align-items:center;
   font-size: 0.75rem;
+  opacity:0;
 }
 
 .information-section .box{
@@ -344,7 +332,7 @@ h3{
   position:absolute;
   background-color:black;
   color:white;
-  z-index:1;
+  z-index:1 ;
 }
 
 .information-section .example-box::after {
@@ -369,6 +357,7 @@ h3{
 
 .education__courses__title{
   padding-left: 10vw;
+  opacity:0
 }
 
 .courses-list{
@@ -380,6 +369,7 @@ h3{
 
 .courses-list li{
   padding: 0.5rem;
+  opacity:0;
 }
 
 .courses-list li:nth-child(n-2){
@@ -398,11 +388,58 @@ h3{
 }
 
 
+
+
+@keyframes draw{
+  0%{
+    opacity:0;
+  }
+  40%{
+    opacity:1;
+  }
+  100%{
+    opacity:1;
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes move{
+  0%{
+    transform: translate(-7vw);
+  }
+  100%{
+    transform: translate(0px);
+  }
+}
+
+@keyframes appear{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity:1;
+  }
+}
+
+.appeared:not(.arrows-section, .information-section){
+  animation: move 0.9s ease forwards, appear 1.3s ease-out forwards;
+}
+
+.information-section.appeared{
+  animation: appear 1.3s ease-in-out 1.5s forwards
+}
+
+.arrows-section.appeared #multiple-arrows{
+  animation: draw 5s linear 0.6s forwards;
+}
+
 .hidden{
   opacity: 0;
   z-index: -1;
   pointer-events:none;
 }
+
+
 
 
 

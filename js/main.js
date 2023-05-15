@@ -6,6 +6,39 @@ const carouselRightButton = document.querySelector(".right-button")
 const universityInformationSection = document.querySelector(".information-section")
 
 
+function setAppearAnimation(){
+  const observer = new IntersectionObserver ((entries, observer) =>{
+    entries.forEach(entry => {
+      const element = entry.target;
+      if (entry.isIntersecting){
+        if (element.dataset.delay) element.style.animationDelay = element.dataset.delay
+        element.classList.add("appeared")
+      }
+    })
+  })
+  const presentationFrontContent = [...(presentation.querySelector(".presentation__front").children)];
+  const objectives = [...document.querySelectorAll(".objective")];
+  const carouselBoxes = [...document.querySelectorAll(".image-box")].slice(0, projectsCarousel.dataset.maxElements)
+  const noAnimatedCarouselBoxes = [...document.querySelectorAll(".image-box")].slice(projectsCarousel.dataset.maxElements);
+  const sectionTitles = [...document.querySelectorAll("h2")]
+  const educationUniversityTitleContent = [...document.querySelector(".education__university__title").children]
+  const educationArrows = document.querySelector(".arrows-section");
+  const educationCoursesTitle = document.querySelector(".education__courses__title")
+  const coursesBoxes = [...document.querySelector(".courses-list").children]
+  noAnimatedCarouselBoxes.forEach(box => box.style.opacity = 1)
+
+  observer.observe(educationCoursesTitle)
+  observer.observe(educationArrows);
+  observer.observe(universityInformationSection);
+  coursesBoxes.forEach(box => observer.observe(box))
+  educationUniversityTitleContent.forEach(containedElement => observer.observe(containedElement))
+  presentationFrontContent.forEach(containedElement => observer.observe(containedElement));
+  sectionTitles.forEach(title => observer.observe(title))
+  objectives.forEach(objective => observer.observe(objective))
+  carouselBoxes.forEach(box => observer.observe(box))
+}
+
+setAppearAnimation();
 
 
 presentation.addEventListener("mouseover", () =>{
