@@ -8,10 +8,12 @@ const universityInformationSection = document.querySelector(".information-sectio
 
 presentation.addEventListener("mouseover", () =>{
   presentationBiography.hidden = false;
+  presentationBiography.classList.add("presentation__biography--visible");
 })
 
 presentation.addEventListener("mouseout", () =>{
   presentationBiography.hidden = true;
+  presentationBiography.classList.remove("presentation__biography--visible");
 })
 
 

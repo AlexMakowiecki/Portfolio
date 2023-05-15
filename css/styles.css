@@ -15,6 +15,7 @@ body{
   color: #DCDCDC;
   /* !TODO: REPLACE THIS*/
   zoom: 130%;
+  padding-bottom: 5rem;
 }
 
 h1{
@@ -91,15 +92,28 @@ h3{
   font-family: "outfit"
 }
 
+@keyframes appear{
+  0%{
+    transform: translateX(-25px);
+  }
+  100%{
+    transform: translateX(0px);
+    opacity:1;
+  }
+}
+
 .presentation__biography{
   max-width: 20%;
-
   opacity: 100;
 
   font-size: 0.8rem;
   line-height: 1.5rem;
   letter-spacing: 0.2rem;
   font-family: "Outfit";
+}
+
+.presentation__biography--visible{
+  animation: appear 1s ease-in-out;
 }
 
 /* OBJECTIVES SECTION */
@@ -307,11 +321,18 @@ h3{
 
 .information-section .question-mark{
   display:inline-block;
-  width: 20px;
-  height: 20px;
-  background-color:white;
+  width: 25px;
+  height: 25px;
   border-radius: 50%;
   margin-left: 1rem;
+  transition:transform 0.15s ease-in-out;
+  object-fit:cover;
+  opacity: 0.8;
+}
+
+.information-section .question-mark:hover{
+  transform: scale(1.05);
+  opacity: 1;
 }
 
 .information-section .example-box{
