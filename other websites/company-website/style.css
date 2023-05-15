@@ -142,9 +142,15 @@ header > .logo {
     height: 35px;
 
   /* Misc */
+    background-color:white;
     border: 1px solid black;
     text-align:center;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
 }
+
 
 @media (max-width: 800px){
   nav {
