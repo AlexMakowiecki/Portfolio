@@ -42,12 +42,21 @@ carouselLeftButton.addEventListener("click", () => {
 })
 
 universityInformationSection.addEventListener("mouseover", (e) =>{
-  if (e.target.matches(".name")){
-    const informationBox = e.target.parentElement;
-    const clientRect = universityInformationSection.getBoundingClientRect();
-    const exampleBox = informationBox.children[1];
-    exampleBox.style.left = `${position.x + clientRect.left}px`;
-    exampleBox.style.bottom = `${position.y}px`;
+  if (e.target.matches(".question-mark")){
+    const questionMark = e.target;
+    const exampleBox = e.target.nextElementSibling;
+    const questionMarkRect = questionMark.getBoundingClientRect();
+    const exampleBoxRect = exampleBox.getBoundingClientRect();
+    const containerRect = exampleBox.parentElement.getBoundingClientRect();
+    exampleBox.style.left = (questionMark.offsetLeft + questionMarkRect.width + 32)+ "px"
+    exampleBox.style.top = (-exampleBoxRect.height/2 + containerRect.height/2) + "px"
     exampleBox.classList.remove("hidden") 
+  }
+})
+
+universityInformationSection.addEventListener("mouseout", (e) =>{
+  if (e.target.matches(".question-mark")){
+    const exampleBox = e.target.nextElementSibling;
+    exampleBox.classList.add("hidden") 
   }
 })
