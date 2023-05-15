@@ -6,6 +6,8 @@ const carouselRightButton = document.querySelector(".right-button")
 const universityInformationSection = document.querySelector(".information-section")
 
 
+
+
 presentation.addEventListener("mouseover", () =>{
   presentationBiography.hidden = false;
   presentationBiography.classList.add("presentation__biography--visible");
