@@ -4,7 +4,7 @@ const presentationFront = presentation.querySelector(".presentation__front")
 const projectsCarousel = document.getElementsByClassName("projects__carousel")[0];
 const carouselLeftButton = document.querySelector(".left-button")
 const carouselRightButton = document.querySelector(".right-button")
-const universityInformationSection = document.querySelector(".information-section")
+const collegeInformationSection = document.querySelector(".information-section")
 
 
 function setAppearAnimation(){
@@ -22,7 +22,7 @@ function setAppearAnimation(){
   const carouselBoxes = [...document.querySelectorAll(".image-box")].slice(0, projectsCarousel.dataset.maxElements)
   const noAnimatedCarouselBoxes = [...document.querySelectorAll(".image-box")].slice(projectsCarousel.dataset.maxElements);
   const sectionTitles = [...document.querySelectorAll("h2")]
-  const educationUniversityTitleContent = [...document.querySelector(".education__university__title").children]
+  const educationcollegeTitleContent = [...document.querySelector(".education__college__title").children]
   const educationArrows = document.querySelector(".arrows-section");
   const educationCoursesTitle = document.querySelector(".education__courses__title")
   const coursesBoxes = [...document.querySelector(".courses-list").children]
@@ -30,9 +30,9 @@ function setAppearAnimation(){
 
   observer.observe(educationCoursesTitle)
   observer.observe(educationArrows);
-  observer.observe(universityInformationSection);
+  observer.observe(collegeInformationSection);
   coursesBoxes.forEach(box => observer.observe(box))
-  educationUniversityTitleContent.forEach(containedElement => observer.observe(containedElement))
+  educationcollegeTitleContent.forEach(containedElement => observer.observe(containedElement))
   presentationFrontContent.forEach(containedElement => observer.observe(containedElement));
   sectionTitles.forEach(title => observer.observe(title))
   objectives.forEach(objective => observer.observe(objective))
@@ -85,7 +85,7 @@ carouselLeftButton.addEventListener("click", () => {
     carouselLeftButton.classList.add("hidden");
 })
 
-universityInformationSection.addEventListener("mouseover", (e) =>{
+collegeInformationSection.addEventListener("mouseover", (e) =>{
   if (e.target.matches(".question-mark")){
     const questionMark = e.target;
     const exampleBox = e.target.nextElementSibling;
@@ -98,7 +98,7 @@ universityInformationSection.addEventListener("mouseover", (e) =>{
   }
 })
 
-universityInformationSection.addEventListener("mouseout", (e) =>{
+collegeInformationSection.addEventListener("mouseout", (e) =>{
   if (e.target.matches(".question-mark")){
     const exampleBox = e.target.nextElementSibling;
     exampleBox.classList.add("hidden") 

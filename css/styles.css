@@ -2,6 +2,7 @@ body{
   --back-color-300: #101010;
   --back-color-500: #161616;
   --back-color-550: #1A1A1A;
+  --back-color-600: #262626;
   --back-color-700: #363636;
   --front-color-600: #ECECEC;
   --front-color-500: #DCDCDC;
@@ -21,26 +22,33 @@ body{
 
 h1{
   font-weight: inherit;
-  position:relative;
+  font-size: 0.8rem
 }
 
-h1:after{
-  display:inline-block;
-  content:"";
-  border-bottom: 1px solid var(--front-color-100);
-  width: 90%;
-  position:absolute;
-  bottom: 0px;
-  left: 0px;
-}
 
 header{
   background-color: var(--back-color-500);
-  padding: 3rem 3rem 1rem 1.5rem;
+  padding-block: 3rem 1rem;
+  padding-inline: 10vw;
   margin-bottom: 7rem;
 
-  font-size: 0.6rem;
-  font-weight: 300;
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+
+  position:relative;
+  
+  font-size: 0.5rem;
+  font-family: "Outfit";
+  font-weight: 300
+}
+
+header:after{
+  display:inline-block;
+  content:"";
+  border-bottom: 2px solid var(--back-color-600);
+  position:absolute;
+  bottom: 0px
 }
 
 main {
@@ -77,21 +85,44 @@ h3{
   font-size: 0.8rem;
 }
 
+header ul {
+  display:flex;
+  column-gap: 20px;
+  list-style:inside;
+}
+
+header ul li{
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  position:relative;
+  top: 0.1em
+}
+
+header ul li span{
+  margin-left: -0.5em;
+}
+
+header ul li strong{
+  font-weight: 500;
+}
 
 .presentation{
   width: 100%;
   display:flex;
   justify-content: center;
   align-items:center;
+  cursor:default;
 }
 
 .presentation__container{
   padding-block: 1rem;
-  width:40%;
+  width:50%;
 
   display:flex;
   justify-content: center;
   align-items:center;
+
+  z-index:2;
 }
 
 
@@ -104,6 +135,7 @@ h3{
 
   position:relative;
   transition: transform 0.5s ease-in-out;
+  z-index:2;
 }
 
 
@@ -112,7 +144,9 @@ h3{
 
   border-radius: 50%;
   object-fit:cover;
-  opacity: 0
+  opacity: 0;
+  border: 1px solid var(--back-color-700);
+  background-color: var(--back-color-300)
 }
 
 .presentation__name{
@@ -126,6 +160,12 @@ h3{
   opacity: 0;
 }
 
+.presentation__age{
+  font-size: 0.8rem;
+  color: var(--front-color-200);
+  opacity:0;
+}
+
 .presentation__biography{
   max-width: 30%;
   opacity: 0;
@@ -135,6 +175,7 @@ h3{
   letter-spacing: 0.2rem;
   font-family: "Outfit";
   position: absolute;
+  z-index:1;
   transition: transform 0.5s ease-in-out, opacity 0.3s cubic-bezier(0,1.05,.76,1.01);
 }
 
@@ -143,7 +184,35 @@ h3{
   opacity: 1;
 }
 
+/* ABILITIES SECTION */
 
+.abilities{
+  padding-inline: 10vw;
+}
+
+.abilities__bar-section{
+  display:flex;
+  justify-content:space-around;
+  padding-block: 2rem;
+}
+
+.ability-box{
+  display:flex;
+  align-items:center;
+  gap: 0.5rem
+}
+
+.ability-box .bar{
+  width: 6rem;
+  height: 1rem;
+}
+
+.bar__progress{
+  background-color:var(--front-color-200);
+  border: 3px solid var(--back-color-500);
+  width: 70%;
+  height: 100%;
+}
 
 /* OBJECTIVES SECTION */
 
@@ -266,7 +335,7 @@ h3{
   gap:4rem;
 }
 
-.education__university{
+.education__college{
   padding-left: 10vw;
   display:grid;
   grid-template-rows: repeat(6, 1fr);
@@ -274,26 +343,26 @@ h3{
   gap: 1rem;
 }
 
-.education__university__title h3,
-.education__university__title p{
+.education__college__title h3,
+.education__college__title p{
   opacity:0;
 }
 
-.education__university .box .name p:last-child,
-.education__university__title p:last-child{
+.education__college .box .name p:last-child,
+.education__college__title p:last-child{
   font-size: 0.6rem;
 }
 
-.education__university .arrows-section{
+.education__college .arrows-section{
   position:relative;
   justify-items:center;
 }
 
-.education__university .arrows-section img{
+.education__college .arrows-section img{
   object-fit:contain
 }
 
-.education__university .arrows-section .vertical-line{
+.education__college .arrows-section .vertical-line{
   position:absolute;
   width: 4.4px;
   height: 227px;
@@ -302,7 +371,7 @@ h3{
   left: 8.7px;
 }
 
-.education__university .arrows-section{
+.education__college .arrows-section{
   grid-row: 2/-1;
   grid-column: 1/1;
 }
@@ -321,7 +390,7 @@ h3{
   opacity:0;
 }
 
-.education__university .information-section{
+.education__college .information-section{
   grid-row: 2/-1;
   grid-column:2/-1;
   display:grid;
@@ -496,6 +565,8 @@ h3{
   z-index: -1;
   pointer-events:none;
 }
+
+
 
 
 
