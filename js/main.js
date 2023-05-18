@@ -13,7 +13,7 @@ const carouselLeftButton = document.querySelector(".left-button")
 const carouselRightButton = document.querySelector(".right-button")
 const collegeInformationSection = document.querySelector(".information-section")
 
-
+console.log(carouselLeftButton, carouselRightButton, projectsCarousel)
 
 function observerAppearAnimation (entries){
   entries.forEach(entry => {
