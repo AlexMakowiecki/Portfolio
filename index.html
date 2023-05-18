@@ -21,9 +21,9 @@
   <body>
     <header>
       <h1>Portafolio para Banco Itaú</h1>
-      <ul>
+      <ul class="information-list">
         <li><span><strong>Telefono:</strong> +54 0221 4768174</span></li>
-        <li><span><strong>Mail:</strong> alex.makowiecki@gmail.com</span></li>
+        <li><span><strong>E-mail:</strong> alex.makowiecki@gmail.com</span></li>
         <li><span><strong>Direccion:</strong> 150 e 8 y 9 n629, Berisso</span></li>
       </ul>
     </header>
@@ -32,61 +32,65 @@
       <section class="presentation">
         <div class="presentation__container">
           <div class="presentation__front">
-            <img
-              class="presentation__photo"
-              src="img/photo.png"
-              width="200px"
-              height="200px"
-              alt="face of Alex Makowiecki, a very talented programmer"
-            />
-            <p class="presentation__name" data-delay="0.10s">Alex Abel Makowiecki</p>
-            <p class="presentation__age" data-delay= "0.15s">22 años</p>
+            <img class="presentation__photo" src="img/photo.png" width="200px" height="200px" alt="face of Alex Makowiecki, a programmer" data-observe="true"/>
+            <p class="presentation__name" data-delay="0.10s" data-observe="true">Alex Abel Makowiecki</p>
+            <p class="presentation__age" data-delay= "0.15s" data-observe="true">22 años</p>
           </div>
           <div class="presentation__biography">
             <p>
-              Hola! me llamo Alex, pero normalmente me llaman Mako. Tengo 22 años y actualmente me encuentro haciendo cursos de programación web online, intentando profundizar mis conocimientos en javascript, pero también estoy abierto a cualquier otra habilidad practica que me ayude en mi experiencia programando
+              Hola! me llamo Alex, pero normalmente me llaman Mako. Tengo 22 años y actualmente me encuentro haciendo cursos de programación web online, profundizando mis conocimientos en javascript, pero también estoy abierto a cualquier otra habilidad practica que me ayude en mi experiencia programando
           </div>
         </div>     
       </section>
       <section class="abilities">
-        <h2 class="objectives__title" data-delay="0.25s">Habilidades</h2>
+        <h2 class="objectives__title" data-delay="0.25s" data-observe="true">Habilidades</h2>
         <div class="abilities__bar-section">
-          <div class="abilities__javascript ability-box">
+          <div class="abilities__javascript ability-box" data-observe="true" data-delay="0.40s">
             <h3>Javascript</h3>
             <div class="bar box-design">
-              <div class="bar__progress"></div>
+              <div class="bar__progress__container">
+                <div class="bar__progress"></div>
+              </div>
             </div>
           </div>
-          <div class="abilities__css ability-box">
+          <div class="abilities__css ability-box" data-observe="true" data-delay="0.60s">
             <h3>HTML</h3>
             <div class="bar box-design">
-              <div class="bar__progress"></div>
+              <div class="bar__progress__container">
+                <div class="bar__progress"></div>
+              </div>    
             </div>
           </div>
-          <div class="abilities__html ability-box">
+          <div class="abilities__html ability-box" data-observe="true" data-delay="0.80s">
             <h3>CSS</h3>
             <div class="bar box-design">
-              <div class="bar__progress"></div>
+              <div class="bar__progress__container">
+                <div class="bar__progress"></div>
+              </div> 
             </div>
           </div>
-          <div class="abilities__java ability-box">
+          <div class="abilities__java ability-box" data-observe="true" data-delay="1s">
             <h3>Java</h3>
             <div class="bar box-design">
-              <div class="bar__progress"></div>
+              <div class="bar__progress__container">
+                <div class="bar__progress"></div>
+              </div> 
             </div>
           </div>
-          <div class="abilities__english ability-box">
+          <div class="abilities__english ability-box" data-observe="true" data-delay="1.2s">
             <h3>Inglés</h3>
             <div class="bar box-design">
-              <div class="bar__progress"></div>
+              <div class="bar__progress__container">
+                <div class="bar__progress"></div>
+              </div> 
             </div>
           </div>
         </div>
       </section>
       <section class="objectives">
-        <h2 class="objectives__title" data-delay="0.25s">Objetivos</h2>
-        <ul class="objectives__list">
-          <li class="objective box-design" data-delay="0.50s">
+        <h2 class="objectives__title" data-delay="0.25s" data-observe="true">Objetivos</h2>
+        <ul class="objectives__list" >
+          <li class="objective box-design" data-observe="true" data-delay="0.50s" >
             <div class="dot"></div>
             <p class="objective__text">
               <strong>Ganar experiencia</strong> a la hora de trabajar para una
@@ -94,7 +98,7 @@
               que hacer, y como y con cuanta eficiencia se espera que los haga
             </p>
           </li>
-          <li class="objective box-design" data-delay="0.75s">
+          <li class="objective box-design" data-observe="true" data-delay="0.75s">
             <div class="dot"></div>
             <p class="objective__text">
               <strong>Aumentar mi habilidad practica en el lenguaje de programación</strong> y en los
@@ -103,7 +107,7 @@
               los datos.
             </p>
           </li>
-          <li class="objective box-design" data-delay="1s">
+          <li class="objective box-design" data-observe="true" data-delay="1s">
             <div class="dot"></div>
             <p class="objective__text">
               <strong>Conocer gente nueva</strong>, saber como se manejan en un
@@ -114,94 +118,80 @@
         </ul>
       </section>
       <section class="projects">
-        <div class="projects__title">
+        <div class="projects__title" data-observe="true">
           <h2>Proyectos</h2>
         </div>
         <div class="carousel-container box-design">
-          <div class="projects__carousel" data-length-position="0" data-max-elements="4">
-            <div class="image-box" data-delay="0s">
+          <div class="projects__carousel" data-length-position="0" data-max-elements="4" data-observe="true">
+            <div class="image-box" data-observe="true" data-delay="0s">
               <a href="other websites/company-website/" target="_blank">
                 <img src="img/company-website.png" width="330px" height="200px"/>
               </a>
-              <!-- TODO: expanded image when hover -->
             </div>
-            <div class="image-box" data-delay="0.2s">
+            <div class="image-box" data-observe="true" data-delay="0.2s">
               <a href="other websites/TypeAhead/" target="_blank">
                 <img src="img/typeahead.png" width="330px" height="200px"/>
               </a>
-              <!-- TODO: expanded image when hover -->
             </div>
-            <div class="image-box" data-delay="0.4s">
+            <div class="image-box" data-observe="true" data-delay="0.4s">
               <a href="other websites/accordion/" target="_blank">
                 <img src="img/Accordion.png" width="330px" height="200px"/>
               </a>
-              <!-- TODO: expanded image when hover -->
             </div>
-            <div class="image-box" data-delay="0.6s">
+            <div class="image-box" data-observe="true" data-delay="0.6s">
               <a href="other websites/Calculator/" target="_blank">
                 <img src="img/calculator.png" width="330px" height="200px"/>
               </a>
-              <!-- TODO: expanded image when hover -->
             </div>
             <div class="image-box">
               <a href="other websites/Carousel/" target="_blank">
                 <img src="img/carousel.png" width="330px" height="200px"/>
               </a>
-              <!-- TODO: expanded image when hover -->
             </div>
             <div class="image-box">
               <a href="other websites/Date picker/" target="_blank">
                 <img src="img/datepicker.png" width="330px" height="200px"/>
               </a>
-              <!-- TODO: expanded image when hover -->
             </div>
             <div class="image-box">
               <a href="other websites/four-card-feature-section-master/website/" target="_blank">
                 <img src="img/four-cards.png" width="330px" height="200px"/>
               </a>
-              <!-- TODO: expanded image when hover -->
             </div>
             <div class="image-box">
               <a href="other websites/Off-canvas menu/" target="_blank">
                 <img src="img/off-canvas-menu.png" width="330px" height="200px"/>
               </a>
-              <!-- TODO: expanded image when hover -->
             </div>
             <div class="image-box">
               <a href="other websites/Preview-card-component/product-preview-card-component-main/website/" target="_blank">
                 <img src="img/perfume.png" width="330px" height="200px"/>
               </a>
-              <!-- TODO: expanded image when hover -->
             </div>
             <div class="image-box">
               <a href="other websites/Popover/" target="_blank">
                 <img src="img/popover.png" width="330px" height="200px"/>
               </a>
-              <!-- TODO: expanded image when hover -->
             </div>
             <div class="image-box">
               <a href="other websites/qr-code-component-main/website/" target="_blank">
                 <img src="img/qr-card.png" width="330px" height="200px"/>
               </a>
-              <!-- TODO: expanded image when hover -->
             </div>
             <div class="image-box">
               <a href="other websites/Tabby/" target="_blank">
                 <img src="img/tabby.png" width="330px" height="200px"/>
               </a>
-              <!-- TODO: expanded image when hover -->
             </div>
             <div class="image-box">
               <a href="other websites/ToDo-list/" target="_blank">
                 <img src="img/todo-list.html.png" width="330px" height="200px"/>
               </a>
-              <!-- TODO: expanded image when hover -->
             </div>
             <div class="image-box">
               <a href="other websites/particles-test/" target="_blank">
                 <img src="img/creating-particles.png" width="330px" height="200px"/>
               </a>
-              <!-- TODO: expanded image when hover -->
             </div>
           </div>
           <button class="carousel__button left-button hidden">
@@ -231,16 +221,16 @@
         </div>
       </section>
       <section class="education">
-        <div class="education__title">
+        <div class="education__title" data-observe="true">
           <h2>Educación recibida</h2>
         </div>
-        <div class="education__content">
+        <div class="education__content" >
           <div class="education__college">
             <div class="education__college__title">
-              <h3 data-delay="0.25s">Facultad de informática de la UNLP</h3>
-              <p data-delay="0.40s">Analista Programador Universitario</p>
+              <h3 data-delay="0.25s" data-observe="true">Facultad de informática de la UNLP</h3>
+              <p data-delay="0.40s" data-observe="true">Analista Programador Universitario</p>
             </div>
-            <div class="arrows-section">
+            <div class="arrows-section" data-observe="true">
               <svg viewBox="0 0 100 100">
                 <path
                   id="multiple-arrows"
@@ -254,7 +244,7 @@
                 ></path>
               </svg>
             </div>
-            <div class="information-section">
+            <div class="information-section" data-observe="true">
               <div class="box">
                 <div class="name">
                   <p>Lógica básica</p>
@@ -317,20 +307,20 @@
             </div>
           </div>
           <div class="education__courses">
-            <div class="education__courses__title" data-delay="0.25s">
+            <div class="education__courses__title" data-delay="0.25s" data-observe="true">
               <h3>Cursos Online</h3>
             </div>
             <ul class="courses-list">
-              <li class="box-design" data-delay="0.5s">
+              <li class="box-design" data-observe="true" data-delay="0.5s">
                 <a href="https://magicaldevschool.com/" target= "_blank"><img src="img/MagicalDevSchool.png" width="230px" height="150px"/></a>
               </li>
-              <li class="box-design" data-delay="0.75s">
+              <li class="box-design" data-observe="true" data-delay="0.75s">
                 <a href="https://www.udemy.com/course/javascript-the-complete-guide-2020-beginner-advanced/" target= "_blank"><img src="img/Udemy.png" width="230px" height="150px" /></a>
               </li>
-              <li class="box-design" data-delay="1s">
+              <li class="box-design" data-observe="true" data-delay="1s">
                 <a href="https://www.frontendmentor.io/challenges?sort=difficulty|asc" target="_blank"><img src="img/frontendMentor.png" width="230px" height="150px"/></a>
               </li>
-              <li class="box-design" data-delay="1.25s">
+              <li class="box-design" data-observe="true" data-delay="1.25s">
                 <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/" target="_blank"><img src="img/freeCodeCamp.jpg" width="230px" height="150px" /></a>
               </li>
             </ul>

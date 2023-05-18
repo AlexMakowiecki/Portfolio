@@ -1,4 +1,11 @@
-const presentation = document.querySelector(".presentation")
+const presentation = document.querySelector(".presentation");
+const abilities = document.querySelector(".abilities");
+const projects = document.querySelector(".projects");
+const education = document.querySelector(".education");
+const educationCollege = education.querySelector("education__college");
+const educationCourses = education.querySelector("education__courses");
+
+
 const presentationBiography  = presentation.querySelector(".presentation__biography")
 const presentationFront = presentation.querySelector(".presentation__front")
 const projectsCarousel = document.getElementsByClassName("projects__carousel")[0];
@@ -7,40 +14,25 @@ const carouselRightButton = document.querySelector(".right-button")
 const collegeInformationSection = document.querySelector(".information-section")
 
 
-function setAppearAnimation(){
-  const observer = new IntersectionObserver ((entries, observer) =>{
-    entries.forEach(entry => {
-      const element = entry.target;
-      if (entry.isIntersecting){
-        if (element.dataset.delay) element.style.animationDelay = element.dataset.delay
-        element.classList.add("appeared")
-      }
-    })
-  })
-  const presentationFrontContent = [...(presentation.querySelector(".presentation__front").children)];
-  const objectives = [...document.querySelectorAll(".objective")];
-  const carouselBoxes = [...document.querySelectorAll(".image-box")].slice(0, projectsCarousel.dataset.maxElements)
-  const noAnimatedCarouselBoxes = [...document.querySelectorAll(".image-box")].slice(projectsCarousel.dataset.maxElements);
-  const sectionTitles = [...document.querySelectorAll("h2")]
-  const educationcollegeTitleContent = [...document.querySelector(".education__college__title").children]
-  const educationArrows = document.querySelector(".arrows-section");
-  const educationCoursesTitle = document.querySelector(".education__courses__title")
-  const coursesBoxes = [...document.querySelector(".courses-list").children]
-  noAnimatedCarouselBoxes.forEach(box => box.style.opacity = 1)
 
-  observer.observe(educationCoursesTitle)
-  observer.observe(educationArrows);
-  observer.observe(collegeInformationSection);
-  coursesBoxes.forEach(box => observer.observe(box))
-  educationcollegeTitleContent.forEach(containedElement => observer.observe(containedElement))
-  presentationFrontContent.forEach(containedElement => observer.observe(containedElement));
-  sectionTitles.forEach(title => observer.observe(title))
-  objectives.forEach(objective => observer.observe(objective))
-  carouselBoxes.forEach(box => observer.observe(box))
+function observerAppearAnimation (entries){
+  entries.forEach(entry => {
+    const element = entry.target;
+    if (entry.isIntersecting){
+      if (element.dataset.delay) element.style.animationDelay = element.dataset.delay
+      element.classList.add("appeared")
+    }
+  })
 }
 
-setAppearAnimation();
+function setObserver(){
+  const observer = new IntersectionObserver (observerAppearAnimation)
+  const elementsToObserve = [...document.querySelectorAll("[data-observe]")]
+  elementsToObserve.forEach(element => element.classList.add("transparent"))
+  elementsToObserve.forEach(element => observer.observe(element));
+}
 
+setObserver();
 
 presentation.addEventListener("mouseover", (e) =>{
   if (e.target.closest(".presentation__container")){

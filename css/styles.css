@@ -16,15 +16,8 @@ body{
   background-color: var(--back-color-500);
   color: #DCDCDC;
   /* !TODO: REPLACE THIS*/
-  zoom: 130%;
   padding-bottom: 5rem;
 }
-
-h1{
-  font-weight: inherit;
-  font-size: 0.9rem
-}
-
 
 header{
   background-color: var(--back-color-500);
@@ -62,12 +55,16 @@ section {
   width: 100%;
 }
 
+h1{
+  font-weight: inherit;
+  font-size: 0.9rem
+}
+
 h2{
   font-size: 1rem;
   font-weight: 400;
   text-align:left;
   margin-bottom:2rem;
-  opacity:0;
   position:relative;
 }
 
@@ -92,22 +89,22 @@ header ul {
   color: var(--front-color-300)
 }
 
-header ul li{
+.information-list li{
   font-size: 0.75rem;
   letter-spacing: 0.05em;
 }
 
-header ul li span{
+.information-list li span{
   margin-left: -0.5em;
 }
 
-header ul li strong{
+.information-list li strong{
   font-family:"Outfit";
   font-weight: 500;
 }
 
 hr{
-  width: 75%;
+  width: 80vw;
   margin-inline:auto;
   border:none;
   height: 1px;
@@ -155,7 +152,6 @@ hr{
 
   border-radius: 50%;
   object-fit:cover;
-  opacity: 0;
   border: 1px solid var(--back-color-700);
   background-color: var(--back-color-300)
 }
@@ -168,13 +164,11 @@ hr{
   font-size: 1.1rem;
   font-weight: 400;
   font-family: "outfit";
-  opacity: 0;
 }
 
 .presentation__age{
   font-size: 0.8rem;
   color: var(--front-color-200);
-  opacity:0;
 }
 
 .presentation__biography{
@@ -216,13 +210,32 @@ hr{
 .ability-box .bar{
   width: 6rem;
   height: 1rem;
+  padding: 2px;
+}
+
+.bar__progress__container{
+  width: 100%;
+  height: 100%;
+  overflow:hidden;
 }
 
 .bar__progress{
   background-color:var(--front-color-200);
-  border: 3px solid var(--back-color-500);
-  width: 70%;
   height: 100%;
+}
+
+.abilities__javascript .bar__progress{
+  width: 70%;
+}
+
+.abilities__html .bar__progress,
+.abilities__css .bar__progress,
+.abilities__english .bar__progress{
+  width: 60%;
+}
+
+.abilities__java .bar__progress{
+  width: 25%;
 }
 
 /* OBJECTIVES SECTION */
@@ -249,7 +262,6 @@ hr{
   display:flex;
   gap: 1.5rem;
   align-items:center;
-  opacity:0
 }
 
 .objective .dot{
@@ -320,7 +332,6 @@ hr{
 .projects__carousel .image-box{
   min-width: 25%;
   padding-inline:1rem;
-  opacity:0;
 }
 
 .image-box img{
@@ -352,11 +363,6 @@ hr{
   grid-template-rows: repeat(6, 1fr);
   grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 1rem;
-}
-
-.education__college__title h3,
-.education__college__title p{
-  opacity:0;
 }
 
 .education__college .box .name p:last-child,
@@ -398,7 +404,6 @@ hr{
   fill: none;
   stroke-dasharray: 382.42645263671875;
   stroke-dashoffset: 382.42645263671875;
-  opacity:0;
 }
 
 .education__college .information-section{
@@ -407,7 +412,6 @@ hr{
   display:grid;
   align-items:center;
   font-size: 0.75rem;
-  opacity:0;
 }
 
 .information-section .box{
@@ -456,12 +460,13 @@ hr{
   height: 0px;
   width: 0px;
   margin: auto;
-  left: -0.70em;
+  left: -0.65em;
   top: 0px;
   bottom: 0px;
   border-right: 0.75em solid black;
   border-top: 1em solid transparent;
   border-bottom: 1em solid transparent;
+  z-index:0;
 }
 
 .information-section .example-box h4{
@@ -490,7 +495,6 @@ hr{
 
 .education__courses__title{
   padding-left: 10vw;
-  opacity:0
 }
 
 .courses-list{
@@ -502,7 +506,6 @@ hr{
 
 .courses-list li{
   padding: 0.5rem;
-  opacity:0;
 }
 
 .courses-list li:nth-child(n-2){
@@ -519,8 +522,6 @@ hr{
 .courses-list li img{
   object-fit:scale-down
 }
-
-
 
 
 @keyframes draw{
@@ -554,7 +555,21 @@ hr{
   }
 }
 
-.appeared:not(.arrows-section, .information-section, .image-box, .courses-list li){
+@keyframes charge{
+  0%{
+    opacity: 0;
+    transform: translate(-100%)
+  }
+  20%{
+    opacity: 1;
+  }
+  100%{
+    opacity:1;
+    transform: translate(0px);
+  }
+}
+
+.appeared:not(.arrows-section, .information-section, .image-box, .courses-list li, .bar__progress){
   animation: move 0.9s ease forwards, appear 1.3s ease-out forwards;
 }
 
@@ -567,14 +582,28 @@ hr{
   animation: appear 1.3s ease-in-out 1.5s forwards
 }
 
-.arrows-section.appeared #multiple-arrows{
-  animation: draw 5s linear 0.6s forwards;
+.ability-box.appeared .bar__progress{
+  animation: charge 2s linear
 }
+
+
 
 .hidden{
   opacity: 0;
   z-index: -1;
   pointer-events:none;
+}
+
+.transparent{
+  opacity:0;
+}
+
+.arrows-section.appeared{
+  opacity:1
+}
+
+.arrows-section.appeared #multiple-arrows{
+  animation: draw 5s linear 0.6s forwards;
 }
 
 
