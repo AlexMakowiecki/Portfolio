@@ -13,6 +13,42 @@ const carouselLeftButton = document.querySelector(".left-button")
 const carouselRightButton = document.querySelector(".right-button")
 const collegeInformationSection = document.querySelector(".information-section")
 
+
+function getPosition(domElement){
+  const elementRect = domElement.getBoundingClientRect();
+  const x = elementRect.x;
+  const y = elementRect.y + window.scrollY;
+  return {x,y};
+}
+
+function attachElement(domElement, domElementReference, separation = 0){
+  const elementRect = domElement.getBoundingClientRect();
+  const elementPosition = getPosition(domElementReference);
+  const referenceRect = domElementReference.getBoundingClientRect();
+  domElement.style.top = elementPosition.y - elementRect.height - separation + "px";
+  domElement.style.left = elementPosition.x - ((elementRect.width-referenceRect.width)/2) + "px";
+}
+
+function createElement(){
+  const redSquare = document.createElement("div");
+  redSquare.classList.add("red-square");
+  document.body.appendChild(redSquare);
+}
+
+createElement();
+
+projectsCarousel.addEventListener("click", (e) => {
+  if (e.target.matches(".info-box")) {
+    const infoBox = e.target;
+    const position = getPosition(infoBox);
+    console.log(position)
+    const explanationBox = document.querySelector(`[data-target = ${infoBox.dataset.theme}]`);
+    attachElement(explanationBox, infoBox, 5)
+    explanationBox.style.opacity = 1;
+  }
+})
+
+
 function observerAppearAnimation (entries){
   entries.forEach(entry => {
     const element = entry.target;
