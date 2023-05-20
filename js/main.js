@@ -43,7 +43,7 @@ projectsCarousel.addEventListener("click", (e) => {
     const position = getPosition(infoBox);
     console.log(position)
     const explanationBox = document.querySelector(`[data-target = ${infoBox.dataset.theme}]`);
-    attachElement(explanationBox, infoBox, 5)
+    attachElement(explanationBox, infoBox, 10)
     explanationBox.style.opacity = 1;
   }
 })
