@@ -23,28 +23,29 @@ function getPosition(domElement){
 
 function attachElement(domElement, domElementReference, separation = 0){
   const elementRect = domElement.getBoundingClientRect();
-  const elementPosition = getPosition(domElementReference);
+  const referencePosition = getPosition(domElementReference);
   const referenceRect = domElementReference.getBoundingClientRect();
-  domElement.style.top = elementPosition.y - elementRect.height - separation + "px";
-  domElement.style.left = elementPosition.x - ((elementRect.width-referenceRect.width)/2) + "px";
+  const top = referencePosition.y - elementRect.height - separation;
+  let left = referencePosition.x - ((elementRect.width-referenceRect.width)/2);
+  const spaceTaken = left + elementRect.width;
+  if (spaceTaken > window.innerWidth) left -= spaceTaken - window.innerWidth;
+  domElement.style.top = top + "px";
+  domElement.style.left = left + "px";
 }
 
-function createElement(){
-  const redSquare = document.createElement("div");
-  redSquare.classList.add("red-square");
-  document.body.appendChild(redSquare);
-}
-
-createElement();
-
-projectsCarousel.addEventListener("click", (e) => {
+let previousExplanationBox;
+document.addEventListener("click", (e) => {
+  if (e.target.closest(".explanation-box")) return;
   if (e.target.matches(".info-box")) {
     const infoBox = e.target;
     const position = getPosition(infoBox);
-    console.log(position)
     const explanationBox = document.querySelector(`[data-target = ${infoBox.dataset.theme}]`);
     attachElement(explanationBox, infoBox, 10)
-    explanationBox.style.opacity = 1;
+    explanationBox.classList.toggle("hidden");
+    if (previousExplanationBox && (previousExplanationBox !== explanationBox)) previousExplanationBox.classList.add("hidden");
+    previousExplanationBox = explanationBox;
+  } else {
+    if (previousExplanationBox) previousExplanationBox.classList.add("hidden");
   }
 })
 

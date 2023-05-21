@@ -1,4 +1,4 @@
-body{
+:root{
   --back-color-300: #101010;
   --back-color-500: #161616;
   --back-color-550: #1A1A1A;
@@ -10,20 +10,22 @@ body{
   --front-color-300: #BEBEBE;
   --front-color-200: #9E9E9E;
   --front-color-100: #6E6E6E;
-  letter-spacing: 0.15em;
+}
+
+body{
   min-height: 100vh;
-  font-family: "Roboto";
-  background-color: var(--back-color-500);
-  color: #DCDCDC;
-  /* !TODO: REPLACE THIS*/
   padding-bottom: 5rem;
+
+  background-color: var(--back-color-500);
+
+  color: #DCDCDC;
+  font-family: "Roboto";
+  letter-spacing: 0.15em;
 }
 
 header{
-  background-color: var(--back-color-500);
   padding-block: 3rem 1rem;
   padding-inline: 10vw;
-
 
   display:flex;
   justify-content:space-between;
@@ -33,14 +35,6 @@ header{
   
   font-family: "Outfit";
   font-weight: 300
-}
-
-header:after{
-  display:inline-block;
-  content:"";
-  border-bottom: 2px solid var(--back-color-600);
-  position:absolute;
-  bottom: 0px
 }
 
 main {
@@ -55,26 +49,30 @@ section {
 }
 
 h1{
+  font-size: 1.1rem;
   font-weight: inherit;
-  font-size: 1.1rem
 }
 
 h2{
+  margin-bottom:5rem;
+
+  position:relative;
+
   font-size: 1.3rem;
   font-weight: 400;
   text-align:left;
-  margin-bottom:5rem;
-  position:relative;
 }
 
 h2:before{
   display:inline-block;
   content:"";
-  border-left: 2px solid var(--front-color-200);
   height: 1em;
+
   position:absolute;
-  bottom: 0px;
+  bottom: 0;
   left: -16px;
+
+  border-left: 2px solid var(--front-color-200);
 }
 
 h3{
@@ -84,7 +82,9 @@ h3{
 header ul {
   display:flex;
   column-gap: 20px;
+
   list-style:inside;
+
   color: var(--front-color-300)
 }
 
@@ -361,31 +361,15 @@ hr{
 }
 
 .explanation-box{
-  max-width: 25vw;
+  width: 25vw;
   background-color:black;
   border-radius:5px;
-  opacity:0;
   position:absolute;
   padding: 1.25em;
   letter-spacing: 0.05em;
   display:flex;
   flex-direction:column;
   gap: 0.5em;
-}
-
-.explanation-box::after {
-  content: "";
-  position: absolute;
-  height: 0px;
-  width: 0px;
-  margin: auto;
-  left: 0px;
-  right: 0px;
-  bottom: -0.65em;
-  border-top: 0.75em solid black;
-  border-right: 1em solid transparent;
-  border-left: 1em solid transparent;
-  z-index:0;
 }
 
 /* EDUCATION SECTION */
@@ -461,6 +445,10 @@ hr{
   display:grid;
   align-items:center;
   font-size: 1rem;
+}
+
+.education__college .mobile-arrows{
+  display:none;
 }
 
 .information-section .box{

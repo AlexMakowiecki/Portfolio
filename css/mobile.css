@@ -1,0 +1,99 @@
+@media screen and (max-width:900px){
+  header{
+    padding-inline:unset;
+    padding-left:10vw;
+  }
+
+  header ul{
+    display:none;
+  }
+
+  hr{
+    width: 100vw;
+  }
+
+  .presentation__biography{
+    display:none;
+  }
+
+  .abilities__bar-section{
+    flex-direction:column;
+    row-gap: 3rem;
+  }
+
+  .objectives__list{
+    flex-direction:column;
+    row-gap:3rem;
+  }
+
+  .objective{
+    justify-content:center;
+  }
+
+  .objective .dot{
+    display:none;
+  }
+
+  .projects__carousel{
+    transition: transform 1s ease-in-out;
+  }
+
+  .projects__carousel .image-box{
+    min-width: 100%;
+  }
+
+  .info-box{
+    display:none;
+  }
+
+  .explanation-box{
+    display:none;
+  }
+
+  .education__college__title{
+    grid-column: 1/-1;
+  }
+
+  .arrows-section{
+    display:none;
+  }
+
+  .information-section .question-mark{
+    display:none;
+  }
+
+  .information-section .box .name p:last-child{
+    display:none;
+  }
+
+  .education__college__title{
+    padding-left: 5vw;
+  }
+
+  .education__college{
+    padding-left: 0vw;
+  }
+
+  .education__college .mobile-arrows{
+    display: grid;
+    grid-row: 2/-1;
+    grid-column: 1/1;
+    grid-template-rows: repeat(5, 1fr);
+    gap: 1rem;
+    align-items:center;
+    justify-items:center;
+  }
+
+  .education__courses .courses-list{
+    flex-wrap:wrap;
+  }
+
+  .education__courses .courses-list li{
+    flex-basis: 40%;
+    height: 7rem;
+  }
+
+  .courses-list li img{
+    transform:unset;
+  }
+}
