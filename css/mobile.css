@@ -7,6 +7,7 @@
   }
 
   .mobile-info-button{
+    display:inline-block;
     padding:0px;
     width: 35px;
     height: 35px;
@@ -30,9 +31,8 @@
     top: 0px;
     left: 0px;
     gap: 3px;
-    background-color:var(--back-color-300);
     padding-block:1rem;
-    transition: opacity 1s ease-in-out;
+    transition: opacity 0.5s linear;
   }
 
   .visible{
