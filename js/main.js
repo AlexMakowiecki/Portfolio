@@ -5,7 +5,7 @@ const education = document.querySelector(".education");
 const educationCollege = education.querySelector("education__college");
 const educationCourses = education.querySelector("education__courses");
 
-
+const presentationContainer = presentation.querySelector(".presentation__container")
 const presentationBiography  = presentation.querySelector(".presentation__biography")
 const presentationFront = presentation.querySelector(".presentation__front")
 const projectsCarousel = document.getElementsByClassName("projects__carousel")[0];
@@ -82,20 +82,18 @@ function setObserver(){
 
 setObserver();
 
-presentation.addEventListener("mouseover", (e) =>{
-  if (e.target.closest(".presentation__container")){
-    presentationBiography.classList.add("presentation__biography--visible");
-    presentationBiography.style.transform = `translate(${presentationBiography.getBoundingClientRect().width/2}px)`
-    presentationFront.style.transform = `translate(-${presentationBiography.getBoundingClientRect().width/2}px)`
-  }
+presentationContainer.addEventListener("mouseenter", () =>{
+  console.log("enter")
+  presentationBiography.classList.add("presentation__biography--visible");
+  presentationBiography.style.transform = `translate(${presentationBiography.getBoundingClientRect().width/2}px)`
+  presentationFront.style.transform = `translate(-${presentationBiography.getBoundingClientRect().width/2}px)`
 })
 
-presentation.addEventListener("mouseout", (e) =>{
-  if (e.target.closest(".presentation__container")){
-    presentationBiography.style.transform = `translate(0px)`
-    presentationFront.style.transform = `translate(0px)`
-    presentationBiography.classList.remove("presentation__biography--visible");
-  }
+presentationContainer.addEventListener("mouseleave", () =>{
+  console.log("exit")
+  presentationBiography.style.transform = `translate(0px)`
+  presentationFront.style.transform = `translate(0px)`
+  presentationBiography.classList.remove("presentation__biography--visible");
 })
 
 
