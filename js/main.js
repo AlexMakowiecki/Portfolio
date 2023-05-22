@@ -14,6 +14,17 @@ const carouselRightButton = document.querySelector(".right-button")
 const collegeInformationSection = document.querySelector(".information-section")
 
 
+const mobileInfoButton = document.querySelector(".mobile-info-button");
+
+mobileInfoButton.addEventListener("click", () => {
+  const informationList = document.querySelector(".information-list");
+  const header = document.querySelector("header")
+  attachElement(informationList, header, 4, "bottom");
+  console.log(informationList)
+  informationList.classList.toggle("visible");
+})
+
+
 function getPosition(domElement){
   const elementRect = domElement.getBoundingClientRect();
   const x = elementRect.x;
@@ -21,11 +32,13 @@ function getPosition(domElement){
   return {x,y};
 }
 
-function attachElement(domElement, domElementReference, separation = 0){
+function attachElement(domElement, domElementReference, separation = 0, position){
   const elementRect = domElement.getBoundingClientRect();
   const referencePosition = getPosition(domElementReference);
   const referenceRect = domElementReference.getBoundingClientRect();
-  const top = referencePosition.y - elementRect.height - separation;
+    const top = (position === "top")
+      ? referencePosition.y - elementRect.height - separation
+      : referencePosition.y + elementRect.height + separation;
   let left = referencePosition.x - ((elementRect.width-referenceRect.width)/2);
   const spaceTaken = left + elementRect.width;
   if (spaceTaken > window.innerWidth) left -= spaceTaken - window.innerWidth;
@@ -40,7 +53,7 @@ document.addEventListener("click", (e) => {
     const infoBox = e.target;
     const position = getPosition(infoBox);
     const explanationBox = document.querySelector(`[data-target = ${infoBox.dataset.theme}]`);
-    attachElement(explanationBox, infoBox, 10)
+    attachElement(explanationBox, infoBox, 10,"top")
     explanationBox.classList.toggle("hidden");
     if (previousExplanationBox && (previousExplanationBox !== explanationBox)) previousExplanationBox.classList.add("hidden");
     previousExplanationBox = explanationBox;

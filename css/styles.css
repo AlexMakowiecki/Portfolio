@@ -21,6 +21,7 @@ body{
   color: #DCDCDC;
   font-family: "Roboto";
   letter-spacing: 0.15em;
+  overflow-x:hidden;
 }
 
 header{
@@ -231,8 +232,7 @@ hr{
   width: 70%;
 }
 
-.abilities__html .bar__progress,
-.abilities__css .bar__progress{
+.abilities__html .bar__progress{
   width: 60%;
 }
 
@@ -240,7 +240,8 @@ hr{
   width: 25%;
 }
 
-.abilities__english .bar__progress{
+.abilities__english .bar__progress,
+.abilities__css .bar__progress{
   width: 50%;
 }
 
@@ -645,6 +646,7 @@ hr{
 .transparent{
   opacity:0;
 }
+
 
 .arrows-section.appeared{
   opacity:1

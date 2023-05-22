@@ -1,15 +1,56 @@
 @media screen and (max-width:900px){
   header{
     padding-inline:unset;
-    padding-left:10vw;
+    padding:5vw;
+    padding-block:7vw;
+    align-items:center;
+  }
+
+  .mobile-info-button{
+    padding:0px;
+    width: 35px;
+    height: 35px;
+    padding:5px;
+    border: 2px solid var(--front-color-200);
+    border-radius:5px;
+  }
+
+  .mobile-info-button img{
+    object-fit:scale-down;
   }
 
   header ul{
-    display:none;
+    opacity:0;
+    z-index:-1;
+    width: 100%;
+    display:flex;
+    flex-direction:column;
+    align-items:center; 
+    position:absolute;
+    top: 0px;
+    left: 0px;
+    gap: 3px;
+    background-color:var(--back-color-300);
+    padding-block:1rem;
+    transition: opacity 1s ease-in-out;
   }
+
+  .visible{
+    opacity:1;
+    z-index:1
+  }  
 
   hr{
     width: 100vw;
+  }
+
+  h2{
+    margin-bottom:5rem;
+  }
+
+  
+  .presentation{
+    margin-top: 6rem;
   }
 
   .presentation__biography{
@@ -50,11 +91,20 @@
     display:none;
   }
 
-  .education__college__title{
-    grid-column: 1/-1;
+  .education__college{
+    padding-inline: 5vw;
+    row-gap: 2rem;
+    column-gap: 2rem;
+    grid-template-columns:repeat(6,1fr)
   }
 
-  .arrows-section{
+  .education__college__title{
+    grid-column: 1/-1;
+    padding-left: 5vw;
+    letter-spacing:0.08em;
+  }
+
+  .education__college .arrows-section{
     display:none;
   }
 
@@ -66,22 +116,23 @@
     display:none;
   }
 
-  .education__college__title{
-    padding-left: 5vw;
+  .education__college .mobile-arrows,
+  .education__college .information-section{
+    margin-top: -1rem;
   }
 
-  .education__college{
-    padding-left: 0vw;
-  }
 
   .education__college .mobile-arrows{
     display: grid;
     grid-row: 2/-1;
-    grid-column: 1/1;
+    grid-column: 1/2;
     grid-template-rows: repeat(5, 1fr);
-    gap: 1rem;
     align-items:center;
-    justify-items:center;
+    justify-items:flex-end;
+  }
+
+  .education__college .information-section{
+    grid-column: 2/-1;
   }
 
   .education__courses .courses-list{
