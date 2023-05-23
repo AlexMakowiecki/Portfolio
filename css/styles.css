@@ -98,9 +98,10 @@ header ul {
   letter-spacing: 0.05em;
 }
 
-.information-list li span{
-  margin-left: -0.5em;
+.information-list li span:first-child{
+  margin-left: -0.7em;
 }
+
 
 .information-list li strong{
   font-family:"Outfit";
@@ -214,6 +215,7 @@ hr{
   align-items:center;
   gap: 0.6rem
 }
+
 
 .ability-box .bar{
   width: 8rem;
@@ -552,6 +554,7 @@ hr{
   padding: 0.5rem;
   width: 20rem;
   height: 13rem;
+  overflow:hidden;
 }
 
 .courses-list li:nth-child(n-2){

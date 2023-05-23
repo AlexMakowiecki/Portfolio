@@ -35,6 +35,7 @@
     transition: opacity 0.5s linear;
   }
 
+
   .visible{
     opacity:1;
     z-index:1
@@ -147,4 +148,45 @@
   .courses-list li img{
     transform:unset;
   }
+}
+
+
+@media screen and (max-width: 1350px) and (min-width: 900px){
+  .ability-box{
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 1400px) and (min-width: 900px){
+  .information-list{
+    list-style:none;
+  }
+
+  .information-list li span{
+    text-align:center;
+    display:block;
+  }
+
+  header{
+    padding-inline:5vw;
+  }
+
+  header h1{
+    display:flex;
+    flex-direction:column;
+  }
+
+  hr{
+    width: 90vw;
+  }
+
+  .abilities,
+  .objectives,
+  .projects__title,
+  .education__title,
+  .education__college,
+  .education__courses__title{
+    padding-inline:5vw;
+  }
+  
 }
