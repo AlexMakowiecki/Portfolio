@@ -84,7 +84,7 @@ header ul {
   display:flex;
   column-gap: 20px;
 
-  list-style:inside;
+  list-style:none;
 
   color: var(--front-color-300)
 }
